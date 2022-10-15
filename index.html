@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+</head>
+    <body>
+        <style>
+            /* gradient rarely works here... body{
+                background-color:  linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+
+            } */
+            body{
+                text-align: center;
+                margin-top: 40px;
+                font-size: larger;
+
+            }
+            .container{
+                width: 600px;
+                display: flex;
+                /* flex-wrap: wrap; */
+                justify-content: center;
+                align-self: center;
+                margin: auto;
+
+            }
+            /* .row1{
+                width: 600px;
+                height: 200px;
+                border: 1px solid saddlebrown;
+                background-color: aqua;
+                display: flex;
+                justify-content: space-between;
+            } */
+            .tables{
+                width: 300px;
+                border: 1px red solid;
+                border-radius: 5px;
+                background-color: rgb(207, 243, 243);
+                color: rgb(44, 38, 38);
+            }
+            button{
+                outline: none;
+                border: 1px solid blue;
+                border-radius: 5px; 
+                height: 30px;
+                font-size: large;
+                color: white;
+                background-color: blue;
+            }
+        </style>
+        Enter a number : <input type="text" id="numb" style="outline: none; border: 1px solid blue;
+       border-radius: 5px; height: 30px;"> <button onclick="addNumber()">Add number</button> <br><br>
+        <div class="container">
+            <div class="row1" id="row1">
+                <div id="table1" class="tables"></div>    
+                <div id="table2" class="tables"></div>   
+            </div>
+            
+                
+        </div>
+    </body>
+    <script>
+        function addNumber(){
+        let table;
+        let result = ""
+        
+        table = Number(document.getElementById('numb').value);
+        for (let i = 1; i <= 12; i++) {
+        //    result = result + `<p> ${table}  *  ${i} = ${table*i} </p>`;
+           result += `<p> ${table}  *  ${i} = ${table*i} </p>`;
+           console.log(result);
+        }
+        document.getElementById("table1").innerHTML = result;
+       
+    }  
+    </script>
+</html>
